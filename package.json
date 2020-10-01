@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"nodemon index.js"
+    "dev":"nodemon src/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/juniorasmat22/Videollamadas.git"
   },
-  "author": "juunior asmat",
+  "author": "junior asmat",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/juniorasmat22/Videollamadas/issues"
