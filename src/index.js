@@ -1,12 +1,10 @@
 const path=require('path');
 const express= require('express');
+const { ExpressPeerServer } = require('peer');
 const app=express();
 const SocketIO=require('socket.io');
 const indexRouter=require('./routes/room');
-const { ExpressPeerServer } = require('peer');
-const peerServer = ExpressPeerServer(server, {
-  debug: true
-});
+
 //setting
 app.set('port',process.env.PORT||3030);
 app.set('views',path.join(__dirname,'views'));
@@ -14,12 +12,18 @@ app.use(indexRouter);
 app.set('view engine','ejs');
 //STATIC FILES
 app.use(express.static(path.join(__dirname,'public')));
-app.use('/peerjs', peerServer);
+
 //listen server
 const server=app.listen(app.get('port'),()=>{
     console.log("server on port",app.get('port'));
-})
+});
+
 const io=SocketIO(server);
+const peerServer = ExpressPeerServer(server, {
+    path: '/'
+  });
+  
+  app.use('/peerjs', peerServer);
 io.on('connection',(socket)=>{
     socket.on('join-room',(roomId,userId)=>{
       console.log(roomId,userId);
@@ -33,3 +37,7 @@ io.on('connection',(socket)=>{
         });
     });
 });
+/* const peerServer = ExpressPeerServer(server, {
+    debug:true
+  });
+app.use('/peerjs', peerServer); */
