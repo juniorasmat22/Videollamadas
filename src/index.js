@@ -16,6 +16,7 @@ const server=app.listen(app.get('port'),()=>{
     console.log("server on port",app.get('port'));
 });
 
+const io=SocketIO(server);
 io.on('connection',(socket)=>{
     socket.on('join-room',(roomId,userId)=>{
       console.log(roomId,userId);
