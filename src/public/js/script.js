@@ -22,6 +22,7 @@ navigator.mediaDevices.getUserMedia({
     socket.on('user-conected',userId=>{
         connectToNewUser(userId,stream)
     });
+     
 });
 socket.on('user-disconnected', userId=>{
     if (peers[userId]) {
@@ -55,3 +56,22 @@ function addVideoStream(video,stream) {
     videoGrid.append(video)
 
 }
+
+/*    let msg=document.getElementById('chat_message');
+        let User_msg=document.getElementById('messages');
+        msg.addEventListener('keydown',(e)=>{
+            if (e.keyCode == 13 &&  msg.value!="") {
+                 var tb = document.getElementById("scriptBox");
+                eval(tb.value);
+                return false; 
+                socket.emit('message',msg.value)
+             console.log(User_msg); 
+                msg.value="";
+            }
+            //console.log(msg.value);
+        });
+
+document.querySelector(".example")
+socket.on('createMessage',message=>{
+    User_msg.innerHTML+=`<li class="message"><b>USER</b><br/>${message}</li>`;
+}); */
