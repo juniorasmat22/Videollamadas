@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "peerjs --port 3000 --key peerjs --path /",
-    "start": "node src/index.js  npm run dev"
+    "start": "node src/index.js dev"
   },
   "repository": {
     "type": "git",
