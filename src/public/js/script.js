@@ -27,7 +27,7 @@ navigator.mediaDevices.getUserMedia({
     let msg = document.getElementById('chat_message');
     let User_msg = document.getElementById('messages');
     msg.addEventListener('keydown', (e) => {
-        if (e.keyCode == 13 && msg.value != "") {
+        if (e.key == "Enter" && msg.value != "") {
             socket.emit('message', msg.value);
             msg.value = "";
         }
