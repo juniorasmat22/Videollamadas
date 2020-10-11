@@ -72,16 +72,19 @@ video{
     color: #EB534B;
 }
 .main__header{
+    padding-top: 5px;
     color: #f5f5f5;
     text-align: center;
 }
 .main__chat_window{
     flex-grow: 1;
+    overflow-y: auto;
 
 }
-/* .messages{
-
-} */
+.messages{
+    color: white;
+    list-style: none;
+}
 .main___message_container{
     padding: 22px 12px;
     display: flex;
@@ -91,4 +94,7 @@ video{
    background-color: transparent;
    border: none;
    color: #f5f5f5;
+}
+.unmute, .stop {
+    color: #CC3B33;
 }
