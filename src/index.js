@@ -4,7 +4,6 @@ const { ExpressPeerServer } = require('peer');
 const app=express();
 const SocketIO=require('socket.io');
 const indexRouter=require('./routes/room');
-
 //setting
 app.set('port',process.env.PORT||3030);
 app.set('views',path.join(__dirname,'views'));
