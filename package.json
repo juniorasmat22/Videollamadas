@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.js  peerjs --port 3000 --key peerjs --path /",
-    "start": "nodemon src/index.js"
+    "dev": "peerjs --port 3000 --key peerjs --path /",
+    "start": "npm src/index.js"
   },
   "repository": {
     "type": "git",
