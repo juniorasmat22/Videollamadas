@@ -1,6 +1,5 @@
 const path=require('path');
 const express= require('express');
-const { ExpressPeerServer } = require('peer');
 const app=express();
 const SocketIO=require('socket.io');
 const indexRouter=require('./routes/room');
@@ -17,12 +16,6 @@ const server=app.listen(app.get('port'),()=>{
     console.log("server on port",app.get('port'));
 });
 
-const io=SocketIO(server);
-const peerServer = ExpressPeerServer(server, {
-    path: '/'
-  });
-  
-  app.use('/peerjs', peerServer);
 io.on('connection',(socket)=>{
     socket.on('join-room',(roomId,userId)=>{
       console.log(roomId,userId);
